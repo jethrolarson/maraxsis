@@ -96,11 +96,11 @@ data:extend {{
     type = "assembling-machine",
     name = "maraxsis-hydro-plant",
     icon = "__maraxsis__/graphics/icons/hydro-plant.png",
-    maraxsis_buildability_rules = {water = true, dome = true, coral = true, trench = true, trench_entrance = false, trench_lava = false},
-    icon_size = 64,
     fluid_boxes_off_when_no_fluid_recipe = false,
     vector_to_place_result = {0, 0},
     use_mirroring = true,
+    maraxsis_buildability_rules = {water = true, dome = true, coral = true, trench = true, trench_entrance = false, trench_lava = false},
+    icon_size = 64,
     open_sound = table.deepcopy(data.raw["assembling-machine"]["chemical-plant"].open_sound),
     close_sound = table.deepcopy(data.raw["assembling-machine"]["chemical-plant"].close_sound),
     working_sound = {
@@ -181,6 +181,9 @@ data:extend {{
     perceived_performance = {minimum = 0.25, performance_to_activity_rate = 20.0, maximum = 5},
     off_when_no_fluid_recipe = true,
     graphics_set = {
+        working_visualisations = working_visualisations
+    },
+    graphics_set_flipped = {
         working_visualisations = working_visualisations
     },
     crafting_categories = {
