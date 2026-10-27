@@ -44,7 +44,7 @@ for _, fluid in pairs(data.raw.fluid) do -- todo: check fluid fuel category
     number_part = tonumber(number_part)
     if not number_part then goto continue end
     barrel.fuel_value = tostring(number_part * 50) .. unit -- 50 fluid per barrel
-    barrel.fuel_category = barrel.fuel_category or "maraxsis-diesel"
+    barrel.fuel_categories = barrel.fuel_categories or {"maraxsis-diesel"}
 
     barrel.fuel_acceleration_multiplier = data.raw.item["rocket-fuel"].fuel_acceleration_multiplier
     barrel.fuel_top_speed_multiplier = data.raw.item["rocket-fuel"].fuel_top_speed_multiplier
@@ -53,7 +53,7 @@ for _, fluid in pairs(data.raw.fluid) do -- todo: check fluid fuel category
     barrel.fuel_glow_color = data.raw.item["rocket-fuel"].fuel_acceleration_multiplier_quality_bonus
     barrel.fuel_glow_color = data.raw.item["rocket-fuel"].fuel_top_speed_multiplier_quality_bonus
 
-    maraxsis_constants.SUBMARINE_FUEL_SOURCES["maraxsis-diesel-submarine"][1] = barrel.fuel_category
+    maraxsis_constants.SUBMARINE_FUEL_SOURCES["maraxsis-diesel-submarine"][1] = barrel.fuel_categories[1]
     barrel.burnt_result = "barrel"
     ::continue::
 end

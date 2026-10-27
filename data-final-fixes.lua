@@ -97,8 +97,8 @@ do
     fuel_category.localised_name = {"fuel-category-name.chemical"}
     data:extend {fuel_category}
 
-    data.raw.item["rocket-fuel"].fuel_category = "rocket-fuel"
-    data.raw.item["nuclear-fuel"].fuel_category = "nuclear-fuel"
+    data.raw.item["rocket-fuel"].fuel_categories = {"rocket-fuel"}
+    data.raw.item["nuclear-fuel"].fuel_categories = {"nuclear-fuel"}
 
     for entity_type in pairs(defines.prototypes.entity) do
         for _, entity in pairs(data.raw[entity_type] or {}) do
